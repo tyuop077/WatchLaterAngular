@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { HeaderComponent } from '../components/header/header.component';
-import { HeaderButtonComponent } from '../components/header-button/header-button.component';
+import { ButtonComponent } from '../components/button/button.component';
 import { ToggleGroupComponent } from '../components/toggle-group/toggle-group.component';
 import { ImageUploaderComponent } from '../components/image-uploader/image-uploader.component';
 
@@ -13,7 +13,7 @@ import { ImageUploaderComponent } from '../components/image-uploader/image-uploa
   declarations: [
     AppComponent,
     HeaderComponent,
-    HeaderButtonComponent,
+    ButtonComponent,
     ToggleGroupComponent,
     ImageUploaderComponent
   ],

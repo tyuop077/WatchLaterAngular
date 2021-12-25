@@ -1,11 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-header-button',
-  templateUrl: './header-button.component.html',
-  styleUrls: ['./header-button.component.scss']
+  selector: 'app-button',
+  templateUrl: './button.component.html',
+  styleUrls: ['./button.component.scss']
 })
-export class HeaderButtonComponent implements OnInit {
+export class ButtonComponent implements OnInit {
 
   constructor() {
     this.className = this.toggled ? "btnActive" : "btn";
