@@ -5,7 +5,7 @@
     <form [formGroup]="form">
       <input type="text" formControlName="searchInput" placeholder="Введите название фильма, например «Титаник»">
       <div class="searchResults">
-        <ng-container *ngIf="(movies$ | async)!.length > 0 || showNotFound; else notFound">
+        <ng-container *ngIf="(movies$ | async)!.length > 0 || hideNotFound; else notFound">
           <div class="movie" *ngFor="let movie of movies$ | async">
             <img src="{{movie.thumbnail_url}}" alt="{{movie.title}}">
             <div>
