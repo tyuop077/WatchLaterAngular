@@ -3,5 +3,7 @@ export interface Movie {
     title: string,
     thumbnail_url: string,
     rating: number,
-    date: number
+    date: number,
+    //description: string,
+    //genres: string[]
 }

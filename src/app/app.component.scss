@@ -1,3 +1,12 @@
+.main {
+  display: flex;
+  padding-top: 80px;
+  justify-content: center;
+  & .container {
+    width: 480px;
+  }
+}
+
 form {
   input {
     padding: 16px 8px;
@@ -15,9 +24,10 @@ form {
 .movie {
   display: flex;
   align-items: center;
-  margin-bottom: 16px;
+  margin: 6px 0;
   img {
     margin-right: 16px;
+    height: 80px;
   }
   h2 {
     color: #878787;
@@ -25,5 +35,14 @@ form {
   }
   span {
     color: #cecece
+  }
+  p {
+    text-align: center;
+    border: 1px solid #002DFF;
+    box-sizing: border-box;
+    border-radius: 14px;
+    font: 500 12px Calibri;
+    width: 24px;
+    height: 16px;
   }
 }
