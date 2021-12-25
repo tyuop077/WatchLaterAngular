@@ -8,7 +8,14 @@ import {Movie} from "../entities/Movie";
 
 export class MovieService {
   movies$: BehaviorSubject<Movie[]> = new BehaviorSubject<Movie[]>(movies);
+
   constructor() { }
+
+  search(query: string) {
+    if (query.length < 1) return this.movies$.next([]);
+    const res = movies.filter(movie => movie.title.toLowerCase().startsWith(query.toLowerCase()));
+    this.movies$.next(res)
+  }
 }
 
 const movies: Movie[] = [

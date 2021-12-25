@@ -18,7 +18,7 @@ export class AppComponent {
       searchInput: []
     });
     this.form.get("searchInput")!.valueChanges.subscribe(res => {
-      console.log(res)
+      this.movieService.search(res)
     })
   }
 
