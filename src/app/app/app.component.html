@@ -1,19 +1,31 @@
 <app-header></app-header>
 <div class="container">
   <div class="main">
-    <h1>Поиск</h1>
+    <h1>О фильме</h1>
     <form [formGroup]="form">
       <input type="text" formControlName="searchInput" placeholder="Введите название фильма, например «Титаник»">
       <div class="searchResults">
-        <div class="movie" *ngFor="let movie of movies$ | async">
-          <img src="{{movie.thumbnail_url}}" alt="{{movie.title}}">
-          <div>
-            <h2>{{movie.title}}</h2>
-            <span>{{movie.date}}</span>
-            <p>{{movie.rating}}</p>
+        <ng-container *ngIf="(movies$ | async)!.length > 0 || showNotFound; else notFound">
+          <div class="movie" *ngFor="let movie of movies$ | async">
+            <img src="{{movie.thumbnail_url}}" alt="{{movie.title}}">
+            <div>
+              <h2>{{movie.title}}</h2>
+              <span>{{movie.date}}</span>
+              <p>{{movie.rating}}</p>
+            </div>
           </div>
-        </div>
+        </ng-container>
       </div>
     </form>
   </div>
 </div>
+
+<ng-template #notFound>
+  <div class="movie">
+    <div class="emptyImg"></div>
+    <div>
+      <h2>Фильм не найден</h2>
+      <span>Добавьте его вручную</span>
+    </div>
+  </div>
+</ng-template>

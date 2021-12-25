@@ -12,6 +12,7 @@ export class AppComponent {
   form: FormGroup;
 
   movies$ = this.movieService.movies$; // Movie[]
+  showNotFound = false;
 
   constructor(private fb: FormBuilder, private movieService: MovieService) {
     this.form = this.fb.group({
@@ -19,6 +20,7 @@ export class AppComponent {
     });
     this.form.get("searchInput")!.valueChanges.subscribe(res => {
       this.movieService.search(res)
+      this.showNotFound = !Boolean(res);
     })
   }
 }
