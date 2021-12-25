@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {MovieService} from "../services/movie.service";
+import {MovieService} from "../../services/movie.service";
 
 @Component({
   selector: 'app-root',
