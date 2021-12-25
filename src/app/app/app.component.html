@@ -2,6 +2,7 @@
 <div class="container">
   <div class="main">
     <h1>О фильме</h1>
+    <app-toggle-group [selected]="0" [buttons]="['КиноПоиск', 'Вручную']"></app-toggle-group>
     <form [formGroup]="form">
       <input type="text" formControlName="searchInput" placeholder="Введите название фильма, например «Титаник»">
       <div class="searchResults">

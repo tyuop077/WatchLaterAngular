@@ -13,6 +13,7 @@ export class AppComponent {
 
   movies$ = this.movieService.movies$; // Movie[]
   hideNotFound = true;
+  selected = "";
 
   constructor(private fb: FormBuilder, private movieService: MovieService) {
     this.form = this.fb.group({
