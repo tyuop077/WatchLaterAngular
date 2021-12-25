@@ -1,0 +1,28 @@
+form {
+  input {
+    padding: 16px 8px;
+    border-width: 0 0 0.5px;
+    width: 450px;
+    font-size: 17px;
+  }
+}
+
+.searchResults {
+  display: flex;
+  flex-direction: column;
+
+}
+.movie {
+  display: flex;
+  align-items: center;
+  img {
+    margin-right: 16px;
+  }
+  h2 {
+    color: #878787;
+    margin: 0;
+  }
+  span {
+    color: #cecece
+  }
+}

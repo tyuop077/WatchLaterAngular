@@ -1,0 +1,12 @@
+<form [formGroup]="form">
+  <input type="text" formControlName="searchInput" placeholder="Введите название фильма, например «Титаник»">
+  <div class="searchResults">
+    <div class="movie" *ngFor="let movie of movies$ | async">
+      <img src="{{movie.thumbnail_url}}" alt="{{movie.title}}">
+      <div>
+        <h2>{{movie.title}}</h2>
+        <span>{{movie.date}}</span>
+      </div>
+    </div>
+  </div>
+</form>

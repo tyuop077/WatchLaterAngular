@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {FormBuilder, FormGroup} from "@angular/forms";
+import {Movie} from "../entities/Movie";
+import {MovieService} from "../services/movie.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'watch-later-angular';
+  title = 'watch-later';
+  form: FormGroup;
+
+  movies$ = this.movieService.movies$; // Movie[]
+
+  constructor(private fb: FormBuilder, private movieService: MovieService) {
+    this.form = this.fb.group({
+      searchInput: []
+    });
+    this.form.get("searchInput")!.valueChanges.subscribe(res => {
+      console.log(res)
+    })
+  }
+
+  //formatValue
 }
