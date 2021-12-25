@@ -1,24 +1,15 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {Movie} from "../entities/Movie";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class MovieService {
-  movies$: BehaviorSubject<Movie[]> = new BehaviorSubject<Movie[]>(movies);
-  constructor() { }
-}
-
-const movies: Movie[] = [
-  {
-    id: 0,
-    title: "test",
-    thumbnail_url: "",
-    rating: 0,
-    date: 2021,
-    description: "",
-    genres: []
+  movies$: BehaviorSubject<Movie[]> = new BehaviorSubject<Movie[]>([]);
+  constructor(private http: HttpClient) {
+    http.get("https://wl.api.tyuop.tk/movies").subscribe((data: any) => this.movies$ = new BehaviorSubject<Movie[]>(data))
   }
-]
+}
