@@ -34,7 +34,7 @@
 </ng-template>
 
 <ng-template #other>
-  <div class="advancedSearch">
+  <form class="advancedSearch">
     <label>Название</label>
     <input placeholder="Например, Титаник">
     <label>Год</label>
@@ -45,7 +45,10 @@
     <input list="genres" placeholder="Выберите из списка">
     <label>Постер</label>
     <app-image-uploader></app-image-uploader>
-  </div>
+    <app-form-button type="submit" value="Сохранить"></app-form-button>
+    Либо эта кнопка:
+    <app-header-button text="Сохранить" [toggled]="true" image="assets/Plus.svg"></app-header-button>
+  </form>
 </ng-template>
 
 <datalist id="genres">
