@@ -1,9 +1,15 @@
-.main {
+.container {
   display: flex;
-  padding-top: 80px;
+  padding-top: 60px;
   justify-content: center;
   & .container {
     width: 480px;
+  }
+}
+
+.main {
+  h1 {
+    text-align: center;
   }
 }
 
@@ -19,8 +25,8 @@ form {
 .searchResults {
   display: flex;
   flex-direction: column;
-
 }
+
 .movie {
   display: flex;
   align-items: center;

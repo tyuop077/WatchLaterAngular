@@ -21,6 +21,4 @@ export class AppComponent {
       this.movieService.search(res)
     })
   }
-
-  //formatValue
 }
