@@ -13,7 +13,7 @@ export class AppComponent {
 
   movies$ = this.movieService.movies$; // Movie[]
   hideNotFound = true;
-  selected = "";
+  selected = 0;
 
   constructor(private fb: FormBuilder, private movieService: MovieService) {
     this.form = this.fb.group({
@@ -23,5 +23,9 @@ export class AppComponent {
       this.movieService.search(res)
       this.hideNotFound = !Boolean(res);
     })
+  }
+
+  onToggleChange(n: number) {
+    this.selected = n;
   }
 }

@@ -1,7 +1,9 @@
-<div class="buttonGroup">
-  <ng-container *ngFor="let button of buttons; let i = index">
-    <button (click)="onChanged(i)" class="{{i === selected ? 'selected' : 'btn'}}">
-      {{button}}
-    </button>
-  </ng-container>
+<div class="line">
+  <div class="buttonGroup">
+    <ng-container *ngFor="let button of buttons; let i = index">
+      <button (click)="handleChange(i)" class="{{i === selected ? 'selected' : 'btn'}}">
+        {{button}}
+      </button>
+    </ng-container>
+  </div>
 </div>

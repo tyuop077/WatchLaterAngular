@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-toggle-group',
@@ -14,8 +14,10 @@ export class ToggleGroupComponent implements OnInit {
 
   @Input() buttons!: string[];
   @Input() selected!: number;
+  @Output() onChanged = new EventEmitter<number>();
 
-  onChanged(n: number) {
+  handleChange(n: number) {
     this.selected = n;
+    this.onChanged.emit(n);
   }
 }
