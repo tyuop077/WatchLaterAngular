@@ -19,4 +19,5 @@ export class HeaderButtonComponent implements OnInit {
   @Input() toggled!: boolean;
   className: string;
   @Input() image!: string;
+  @Input() custom = ""; // custom styles
 }

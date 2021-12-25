@@ -36,4 +36,11 @@
   &:active {
     background: #8c8c8c;
   }
+  &WithBorders {
+    @extend .btn;
+    border: 3px solid #002DFF;
+    img {
+      top: 4.5px;
+    }
+  }
 }

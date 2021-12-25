@@ -1,4 +1,5 @@
-<div class="imageUploader">
+<div (click)="uploader.click()" class="imageUploader">
   <img src="assets/Share.svg" alt="Share icon"/>
   <label>Загрузить фото</label>
+  <input type="file" name="file" id="fileUploader" accept="image/*" #uploader/>
 </div>

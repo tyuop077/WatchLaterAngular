@@ -2,7 +2,9 @@
 <div class="container">
   <div class="main">
     <h1>О фильме</h1>
-    <app-toggle-group [selected]="selected" [buttons]="['КиноПоиск', 'Вручную']" (onChanged)="onToggleChange($event)"></app-toggle-group>
+    <div class="center">
+      <app-toggle-group [selected]="selected" [buttons]="['КиноПоиск', 'Вручную']" (onChanged)="onToggleChange($event)"></app-toggle-group>
+    </div>
     <ng-container *ngIf="selected === 0; else other">
       <form [formGroup]="form">
         <input type="text" formControlName="searchInput" placeholder="Введите название фильма, например «Титаник»">
@@ -45,9 +47,9 @@
     <input list="genres" placeholder="Выберите из списка">
     <label>Постер</label>
     <app-image-uploader></app-image-uploader>
-    <app-form-button type="submit" value="Сохранить"></app-form-button>
-    Либо эта кнопка:
-    <app-header-button text="Сохранить" [toggled]="true" image="assets/Plus.svg"></app-header-button>
+    <div class="center">
+      <app-header-button text="Сохранить" custom="WithBorders" image="assets/Plus.svg"></app-header-button>
+    </div>
   </form>
 </ng-template>
 
