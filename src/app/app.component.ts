@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {Movie} from "../entities/Movie";
 import {MovieService} from "../services/movie.service";
 
 @Component({
