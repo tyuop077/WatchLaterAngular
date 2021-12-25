@@ -2,9 +2,6 @@
   display: flex;
   padding-top: 60px;
   justify-content: center;
-  & .container {
-    width: 480px;
-  }
 }
 
 .main {
@@ -56,4 +53,19 @@ form {
     width: 24px;
     height: 16px;
   }
+}
+
+.advancedSearch {
+  padding-top: 8px;
+  input, select {
+    width: 100%;
+    font-size: 17px;
+    border-width: 0 0 0.5px;
+    padding: 8px 8px;
+  }
+  label {
+    font-weight: 700;
+    font-family: SF Pro Display, sans-serif;
+  }
+  width: 450px;
 }

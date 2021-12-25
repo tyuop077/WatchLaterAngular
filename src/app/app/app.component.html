@@ -2,23 +2,24 @@
 <div class="container">
   <div class="main">
     <h1>О фильме</h1>
-    {{selected}}
     <app-toggle-group [selected]="selected" [buttons]="['КиноПоиск', 'Вручную']" (onChanged)="onToggleChange($event)"></app-toggle-group>
-    <form [formGroup]="form">
-      <input type="text" formControlName="searchInput" placeholder="Введите название фильма, например «Титаник»">
-      <div class="searchResults">
-        <ng-container *ngIf="(movies$ | async)!.length > 0 || hideNotFound; else notFound">
-          <div class="movie" *ngFor="let movie of movies$ | async">
-            <img src="{{movie.thumbnail_url}}" alt="{{movie.title}}">
-            <div>
-              <h2>{{movie.title}}</h2>
-              <span>{{movie.date}}</span>
-              <p>{{movie.rating}}</p>
+    <ng-container *ngIf="selected === 0; else other">
+      <form [formGroup]="form">
+        <input type="text" formControlName="searchInput" placeholder="Введите название фильма, например «Титаник»">
+        <div class="searchResults">
+          <ng-container *ngIf="(movies$ | async)!.length > 0 || hideNotFound; else notFound">
+            <div class="movie" *ngFor="let movie of movies$ | async">
+              <img src="{{movie.thumbnail_url}}" alt="{{movie.title}}">
+              <div>
+                <h2>{{movie.title}}</h2>
+                <span>{{movie.date}}</span>
+                <p>{{movie.rating}}</p>
+              </div>
             </div>
-          </div>
-        </ng-container>
-      </div>
-    </form>
+          </ng-container>
+        </div>
+      </form>
+    </ng-container>
   </div>
 </div>
 
@@ -31,3 +32,30 @@
     </div>
   </div>
 </ng-template>
+
+<ng-template #other>
+  <div class="advancedSearch">
+    <label>Название</label>
+    <input placeholder="Например, Титаник">
+    <label>Год</label>
+    <input placeholder="Укажите год выхода фильма">
+    <label>Описание</label>
+    <input placeholder="Напишите пару слов о сюжете">
+    <label>Жанр</label>
+    <input list="genres" placeholder="Выберите из списка">
+  </div>
+</ng-template>
+
+<datalist id="genres">
+  <option>Драма</option>
+  <option>Ужасы</option>
+  <option>Триллер</option>
+  <option>Биография</option>
+  <option>Преступление</option>
+  <option>Комедия</option>
+  <option>Мультфильм</option>
+  <option>Фэнтези</option>
+  <option>Приключения</option>
+  <option>Семейный</option>
+  <option>Музыка</option>
+</datalist>
