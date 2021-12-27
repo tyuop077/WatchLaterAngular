@@ -2,26 +2,26 @@
 
 Watch Later Angular app
 
-### Development server
+### `ng serve`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Start the development server
 
-### Code scaffolding
+### `ng generate component component-name`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Generate a new component or `directive|pipe|service|class|guard|interface|enum|module`
 
-### Build
+### `ng build`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Build the project
 
-### Running unit tests
+### `ng test`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Execute the unit tests
 
-### Running end-to-end tests
+### `ng e2e`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Execute the end-to-end tests
 
-### Angular CLI
+### `ng help`
 
-`ng help` and https://angular.io/cli
+[Angular CLI](https://angular.io/cli) help
